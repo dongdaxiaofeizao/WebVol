@@ -1,0 +1,18 @@
+@import "../../skin/skin.wxss";
+@import "../../../../style/project/my_index_base.wxss";
+
+
+/*投影*/
+.main .upside { 
+	height: 450rpx;
+	padding: 0 0 0rpx 0;
+}
+
+.main .upside .user-bar .detail .desc {
+	color: #fff
+}
+
+.main .down {
+	margin-top: -130rpx;
+	z-index: 9999;
+}
