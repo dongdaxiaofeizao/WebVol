@@ -1,6 +1,6 @@
 <view class="main main-home">
 
-	<view class="top-pic">
+	<view class="top-pic"> 
 		<image mode="aspectFit" src="../../images/home/top.jpg"></image>
 	</view>
 	<view class="bottom-area">
