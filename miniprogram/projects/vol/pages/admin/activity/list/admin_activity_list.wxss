@@ -1,0 +1,21 @@
+@import '../../../../../../style/public/admin.wxss';
+@import '../../../../../../style/project/admin_list_style.wxss';
+
+page {
+	background-color: #f8f8f8;
+}
+
+.admin-comm-list .item .info .oprt {
+	justify-content:center;
+	margin-top: 30rpx;  
+}
+
+.admin-comm-list .item .info .oprt .btn {
+	flex-wrap: wrap;
+	width: 145rpx;
+	margin-right: 20rpx !important;
+}
+
+.admin-comm-list .item .header .right {
+    font-size: 26rpx;
+}

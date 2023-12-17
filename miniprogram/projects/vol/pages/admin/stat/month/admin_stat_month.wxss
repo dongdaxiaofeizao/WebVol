@@ -1,0 +1,18 @@
+@import '../../../../../../style/public/admin.wxss';
+@import '../../../../../../style/base/table.wxss';
+
+.thead {
+	background-color: #e7ebed;
+}
+
+.thead .td {
+	font-size: 26rpx;
+}
+
+.tbody .tr .td {
+	font-size: 24rpx;
+}
+
+.tbody .tr.cur {
+	background-color: #cce6ff !important;
+}

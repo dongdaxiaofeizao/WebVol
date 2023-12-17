@@ -1,0 +1,24 @@
+@import "../../../style/skin.wxss"; 
+.submit-line {
+	width: 100%;
+}
+
+.form-group .mobile {
+	flex: 1;
+	text-align: left;
+}
+
+.submit-line {
+	width: 100%;
+}
+
+.form-group .mobile {
+	flex: 1;
+	text-align: left;
+} 
+
+.form-group .avatar {
+	width: 100rpx;
+	height: 100rpx;
+	border-radius: 10rpx;
+}

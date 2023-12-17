@@ -1,0 +1,35 @@
+<block wx:if="{{isLoad}}">
+	<cmpt-comm-list type="score_my_list" _params="{{_params}}" search="{{search||''}}" _menus="{{sortMenus}}" _items="{{sortItems}}" route="score/my_list" isTotalMenu="{{true}}" sortMenusDefaultIndex="0" topBottom="120" placeholder="搜索" bind:list="bindCommListCmpt">
+
+		<view slot="searchEnd">
+
+		</view>
+
+		<!-- List Begin -->
+		<view class="text-pic-list-box padding-project">
+
+			<view class="item card-project shadow-project" wx:for="{{dataList.list}}" wx:key="key">
+				<view wx:if="{{item.SCORE_CNT>=0}}" class="status bg-cyan light">+{{item.SCORE_CNT}}</view>
+				<view wx:else class="status bg-pink light">{{item.SCORE_CNT}}</view>
+
+				<view class="author"><text class="text-black">时间：</text>{{item.SCORE_ADD_TIME}}</view>
+				<view class="author"><text class="text-black">类别：</text>{{item.SCORE_TYPE==1?'增加':'减少'}}</view>
+				<view class="author"><text class="text-black">积分数：</text>{{item.SCORE_CNT}}</view>
+			 
+				<view wx:if="{{isAdmin&&item.SCORE_EDIT_ADMIN_NAME}}" class="author"><text class="text-black">管理员名：</text>{{item.SCORE_EDIT_ADMIN_NAME||'无'}}</view>
+				<view class="author" style="display: block;line-height: 1.7;"><text class="text-black">备注：</text><text>{{item.SCORE_DESC||'无'}}</text></view>
+
+			</view>
+
+			<!--load begin-->
+			<import src="../../../../../tpls/public/list_load_tpl.wxml" />
+			<template is="listLoadTpl" data="{{skin:'load-project',dataList}}" />
+			<!--load end-->
+
+		</view>
+		<!-- List END -->
+
+	</cmpt-comm-list>
+ 
+
+</block>

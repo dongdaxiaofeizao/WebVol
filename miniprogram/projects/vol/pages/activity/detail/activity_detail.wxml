@@ -1,0 +1,110 @@
+<view wx:if="{{isLoad===null}}" class="margin-top load notexist text-l load-project"></view>
+<view wx:if="{{isLoad===false}}" class="margin-top load loading text-l load-project"></view>
+
+<block wx:if="{{isLoad}}">
+
+	<view class="main">
+		<view class="top">
+			<image class="cover loading" mode="widthFix" lazy-load="{{true}}" src="{{activity.ACTIVITY_OBJ.cover[0]}}" />
+			<view class="inner">
+				<view class="title"><text>{{activity.ACTIVITY_TITLE}} </text></view>
+				<view class="info">
+					<view class="line"><text class="icon-calendar margin-right-xs"></text><text class="tt">活动时间：</text>{{activity.time}}</view>
+					<view class="line"><text class="icon-remind margin-right-xs"></text><text class="tt">报名时间：</text>{{activity.begin}} ~ {{activity.stop}}</view>
+
+					<view class="line more" bind:tap="url" data-type="phone" data-url="{{activity.ACTIVITY_OBJ.tel}}">
+						<view class="more1">
+							<text class="icon-people margin-right-xs"></text><text class="tt">联系人：</text>{{activity.ACTIVITY_OBJ.person}}
+						</view>
+						<view class="more2"> {{activity.ACTIVITY_OBJ.tel}}<text class="icon-right"></text></view>
+
+					</view>
+
+					<view class="line"><text class="icon-roundclose margin-right-xs"></text><text class="tt">取消规则：</text>
+						<text wx:if="{{activity.ACTIVITY_CANCEL_SET==0}}">报名不可取消</text>
+						<text wx:if="{{activity.ACTIVITY_CANCEL_SET==1}}">报名随时可取消</text>
+						<text wx:if="{{activity.ACTIVITY_CANCEL_SET==2}}">报名截止前可取消</text>
+					</view>
+
+					<view class="line" bindtap="bindOpenMapTap" data-address="{{activity.ACTIVITY_ADDRESS}}" data-geo="{{activity.ACTIVITY_ADDRESS_GEO}}">
+						<view class="desc text-s"><text class="icon-location margin-right-xs"></text>{{activity.ACTIVITY_ADDRESS}} <text class="icon-right text-grey"></text></view>
+					</view>
+
+				</view>
+
+			</view>
+
+
+		</view>
+
+		<view class="bottom">
+			<view class="menu">
+				<view bindtap="bindCurTap" class="item {{cur=='flow'?'cur':''}}" data-cur="flow">活动详情</view>
+				<view bindtap="bindCurTap" class="item {{cur=='users'?'cur':''}}" data-cur="users">现场图集</view>
+			</view>
+
+			<view class="inner">
+				<block wx:if="{{cur=='flow'}}">
+					<view class="detail article-box">
+						<view class="article" style="padding-top:0">
+							<block wx:for="{{activity.ACTIVITY_OBJ.desc}}" wx:key="key">
+								<view class="content" wx:if="{{item.type=='text'}}">
+									<text user-select="{{true}}">{{item.val}}</text>
+								</view>
+								<view class="pics" wx:if="{{item.type=='img'}}">
+									<image bindtap="url" data-type='img' data-url="{{item.val}}" show-menu-by-longpress="{{true}}" class="loading" mode='widthFix' lazy-load="true" src="{{item.val}}">
+									</image>
+								</view>
+							</block>
+						</view>
+
+					</view>
+				</block>
+				<block wx:if="{{cur=='users'}}">
+					<view class="detail article-box">
+						<view class="article" style="padding-top:0">
+							<view class="text-s text-center margin-top text-grey" wx:if="{{activity.ACTIVITY_OBJ.album.length==0}}">暂无图集!~</view>
+							<block wx:for="{{activity.ACTIVITY_OBJ.album}}" wx:key="key">
+								<view class="content" wx:if="{{item.type=='text'}}">
+									<text user-select="{{true}}">{{item.val}}</text>
+								</view>
+								<view class="pics" wx:if="{{item.type=='img'}}">
+									<image bindtap="url" data-type='img' data-url="{{item.val}}" show-menu-by-longpress="{{true}}" class="loading" mode='widthFix' lazy-load="true" src="{{item.val}}">
+									</image>
+								</view>
+							</block>
+						</view>
+
+					</view>
+				</block>
+
+			</view>
+		</view>
+
+
+	</view>
+
+	<view style="height:200rpx"></view>
+
+
+	<cmpt-detail mode="mode2" topBtnShow="{{topBtnShow}}" tag="{{activity.myActivityJoinTag}}" oid="{{activity._id}}" cate="{{activity.ACTIVITY_CATE_NAME}}" title="{{activity.ACTIVITY_TITLE}}" cover="{{activity.ACTIVITY_OBJ.cover[0]}}" qr="{{activity.ACTIVITY_QR}}" desc="查看活动详情" bg="{{skin.PROJECT_COLOR}}">
+		<view class="bottom-line">
+
+			<view class="score">
+				<view class="item">
+					<text class="num"><text class="text-compare">{{activity.ACTIVITY_JOIN_CNT}}</text><text class="text-grey" style="margin:0 4rpx">/</text><text style="{{activity.ACTIVITY_MAX_CNT==0?'font-size:24rpx':''}}">{{activity.ACTIVITY_MAX_CNT==0?'不限':activity.ACTIVITY_MAX_CNT}}</text></text>
+					<text class="tt">已报名</text>
+				</view>
+				<view class="item">
+					<text class="num text-project">{{activity.ACTIVITY_OBJ.score}}</text>
+					<text class="tt">积分</text>
+				</view>
+			</view>
+
+			<view bindtap="bindJoinTap" wx:if="{{activity.statusDesc=='报名中'&&!activity.myActivityJoinId}}" class="join bg-project text-white">我要报名</view>
+			<view bindtap="bindCancelJoinTap" wx:elif="{{activity.myActivityJoinId}}" class="join bg-grey light">取消报名</view>
+			<view wx:else class="join bg-grey light">{{activity.statusDesc}}</view>
+		</view>
+	</cmpt-detail>
+
+</block>

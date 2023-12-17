@@ -1,0 +1,119 @@
+{
+	"pages": [
+		"projects/vol/pages/default/index/default_index",
+		"projects/vol/pages/about/index/about_index",
+		"projects/vol/pages/search/search",
+		"projects/vol/pages/my/index/my_index",
+		"projects/vol/pages/my/reg/my_reg",
+		"projects/vol/pages/my/edit/my_edit",
+		"projects/vol/pages/my/foot/my_foot",
+		"projects/vol/pages/my/fav/my_fav",
+		"projects/vol/pages/news/index/news_index",
+		"projects/vol/pages/news/detail/news_detail",
+		"projects/vol/pages/news/cate1/news_cate1",
+		"projects/vol/pages/admin/news/list/admin_news_list",
+		"projects/vol/pages/admin/news/add/admin_news_add",
+		"projects/vol/pages/admin/news/edit/admin_news_edit",
+		"projects/vol/pages/admin/setup/about/admin_setup_about",
+		"projects/vol/pages/admin/setup/about_list/admin_setup_about_list",
+		"projects/vol/pages/admin/setup/qr/admin_setup_qr",
+		"projects/vol/pages/admin/index/home/admin_home",
+		"projects/vol/pages/admin/index/login/admin_login",
+		"projects/vol/pages/admin/content/admin_content",
+		"projects/vol/pages/admin/mgr/log/admin_log_list",
+		"projects/vol/pages/admin/mgr/edit/admin_mgr_edit",
+		"projects/vol/pages/admin/mgr/list/admin_mgr_list",
+		"projects/vol/pages/admin/mgr/add/admin_mgr_add",
+		"projects/vol/pages/admin/mgr/pwd/admin_mgr_pwd",
+		"projects/vol/pages/admin/user/list/admin_user_list",
+		"projects/vol/pages/admin/user/detail/admin_user_detail",
+		"projects/vol/pages/admin/user/export/admin_user_export",
+		"projects/vol/pages/activity/index/activity_index",
+		"projects/vol/pages/activity/his/activity_his",
+		"projects/vol/pages/activity/detail/activity_detail",
+		"projects/vol/pages/activity/join/activity_join",
+		"projects/vol/pages/activity/my_join_list/activity_my_join_list",
+		"projects/vol/pages/activity/my_join_detail/activity_my_join_detail",
+		"projects/vol/pages/activity/my_join_self/activity_my_join_self",
+		"projects/vol/pages/activity/calendar/activity_calendar",
+		"projects/vol/pages/admin/activity/join_list/admin_activity_join_list",
+		"projects/vol/pages/admin/activity/self/admin_activity_self",
+		"projects/vol/pages/admin/activity/export/admin_activity_export",
+		"projects/vol/pages/admin/activity/scan/admin_activity_scan",
+		"projects/vol/pages/admin/activity/list/admin_activity_list",
+		"projects/vol/pages/admin/activity/add/admin_activity_add",
+		"projects/vol/pages/admin/activity/edit/admin_activity_edit",
+		"projects/vol/pages/score/my_list/score_my_list",
+		"projects/vol/pages/score/rank/score_rank",
+		"projects/vol/pages/goods/index/goods_index",
+		"projects/vol/pages/goods/detail/goods_detail",
+		"projects/vol/pages/goods/my_order_list/goods_my_order_list",
+		"projects/vol/pages/admin/stat/month/admin_stat_month",
+		"projects/vol/pages/admin/goods/list/admin_goods_list",
+		"projects/vol/pages/admin/goods/add/admin_goods_add",
+		"projects/vol/pages/admin/goods/edit/admin_goods_edit",
+		"projects/vol/pages/admin/goods/order_list/admin_goods_order_list",
+		"cmpts/public/form/form_set/field/form_set_field",
+		"cmpts/public/form/form_show/content/form_show_content",
+		"pages/test1/test1"
+	],
+	"window": {
+		"backgroundColor": "#f1f1f1",
+		"backgroundTextStyle": "dark",
+		"navigationBarBackgroundColor": "#00B1C2",
+		"navigationBarTitleText": "志愿者小程序",
+		"navigationBarTextStyle": "white"
+	},
+	"tabBar": {
+		"custom": false,
+		"backgroundColor": "#FFFFFF",
+		"color": "#999999",
+		"selectedColor": "#000000",
+		"list": [
+			{
+				"pagePath": "projects/vol/pages/default/index/default_index",
+				"text": "首页",
+				"iconPath": "/projects/vol/images/tabbar/home.png",
+				"selectedIconPath": "/projects/vol/images/tabbar/home_cur.png"
+			},
+			{
+				"pagePath": "projects/vol/pages/news/index/news_index",
+				"text": "公告",
+				"iconPath": "/projects/vol/images/tabbar/news.png",
+				"selectedIconPath": "/projects/vol/images/tabbar/news_cur.png"
+			},
+			{
+				"pagePath": "projects/vol/pages/activity/index/activity_index",
+				"text": "活动",
+				"iconPath": "/projects/vol/images/tabbar/enroll.png",
+				"selectedIconPath": "/projects/vol/images/tabbar/enroll_cur.png"
+			},
+			{
+				"pagePath": "projects/vol/pages/score/rank/score_rank",
+				"text": "积分榜",
+				"iconPath": "/projects/vol/images/tabbar/his.png",
+				"selectedIconPath": "/projects/vol/images/tabbar/his_cur.png"
+			},
+			{
+				"pagePath": "projects/vol/pages/my/index/my_index",
+				"text": "我的",
+				"iconPath": "/projects/vol/images/tabbar/my.png",
+				"selectedIconPath": "/projects/vol/images/tabbar/my_cur.png"
+			}
+		]
+	},
+	"permission": {
+		"scope.userLocation": {
+			"desc": "获取你当前位置信息用于小程序位置接口的效果展示"
+		}
+	},
+	"requiredPrivateInfos": [
+		"chooseLocation"
+	],
+	"usingComponents": {
+		"cmpt-comm-list": "/cmpts/public/list/comm_list_cmpt",
+		"cmpt-picker": "/cmpts/public/picker/picker_cmpt",
+		"cmpt-modal": "/cmpts/public/modal/modal_cmpt"
+	},
+	"sitemapLocation": "sitemap.json"
+}

@@ -1,0 +1,93 @@
+<view class="main">
+	<view class="up">
+		<image mode="widthFix" src="../../../images/home.jpg" /> 
+
+	</view>
+	<view class="menu">
+		<view class="inner">
+			<view bindtap="url" data-type="relaunch" data-url="../../news/index/news_index" class="item">
+				<view class="item-inner">
+					<view class="img">
+						<image src="../../../images/menu/p.png" />
+					</view>
+					<view class="title">通知公告</view>
+				</view>
+			</view>
+			<view bindtap="url" data-url="../../activity/calendar/activity_calendar" class="item">
+				<view class="item-inner">
+					<view class="img">
+						<image src="../../../images/menu/c.png" />
+					</view>
+					<view class="title">活动日历</view>
+				</view>
+			</view>
+			<view bindtap="url" data-url="../../activity/his/activity_his" class="item">
+				<view class="item-inner">
+					<view class="img">
+						<image src="../../../images/menu/r.png" />
+					</view>
+					<view class="title">往期活动</view>
+				</view>
+			</view>
+			<view bindtap="url" data-url="../../goods/index/goods_index" class="item">
+				<view class="item-inner">
+					<view class="img">
+						<image src="../../../images/menu/s.png" />
+					</view>
+					<view class="title">积分商城</view>
+				</view>
+			</view>
+
+		</view>
+		<view class="line1"></view>
+	</view>
+
+	<view class="mid">
+		<view bindtap="url" data-url="../../about/index/about_index?key=SETUP_CONTENT_ABOUT" class="corp">
+			<image src="../../../images/home/corp.jpg" mode="aspectFill" />
+			<text class="more icon-roundright"></text>
+			<view class="label">组织介绍</view>
+			<view class="name">京海市顺义街道天嘉社区志愿者服务队</view>
+		</view>
+		<view bindtap="url" data-url="../../my/reg/my_reg" class="corp" style="margin-top:30rpx;box-shadow: 0 10rpx 20rpx 10rpx #efcce0;">
+			<image src="../../../images/home/rank.jpg" mode="aspectFill" />
+			<text class="more icon-roundright"></text>
+			<view class="label">申请成为志愿者</view>
+			<view class="name">积沙成塔，每一个人的奉献成就团队的力量</view>
+		</view>
+	</view>
+
+
+	<view class="down"> 
+		<view class="tab-line" bindtap="url" data-type="relaunch" data-url="../../activity/index/activity_index">
+			<view class="title">推荐活动</view>
+			<view class="more">更多<text class="icon-right text-gray" style="font-size: 24rpx;"></text></view>
+		</view>
+
+		<!-- List Begin -->
+		<view wx:if="{{!vouchList}}" class="margin-top load loading text-l load-project"></view>
+
+		<view class="list">
+			<view wx:for="{{vouchList}}" wx:key="key" class="item" bindtap="url" data-url="../../activity/detail/activity_detail?id={{item._id}}">
+
+				<image class="left loading shadow-project" mode="aspectFill" lazy-load="{{true}}" src="{{item.ACTIVITY_OBJ.cover[0]}}" />
+				<view class="right">
+					<view class="title content-cut-two">{{item.ACTIVITY_TITLE}}</view>
+					<view class="downside">
+						<view class="desc text-black">招募人数 <text class="text-compare">{{item.ACTIVITY_TITLE==0?'不限':item.ACTIVITY_MAX_CNT}}</text> 人</view>
+						<view class="desc">{{item.time}}</view>
+					</view>
+					<view class="detail">详情</view>
+				</view>
+
+			</view>
+		</view>
+		<!-- List END -->
+	</view>
+	<view style="height: 200rpx;"></view>
+</view>
+
+<block wx:if="{{skin.IS_SUB}}">
+	<import src="../../tpls/menu_tpl.wxml" />
+	<template is="menuTpl" data="{{curMenu:'home_index',returnHome:false}}" />
+</block>

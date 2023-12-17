@@ -1,0 +1,70 @@
+<block wx:if="{{isAdmin}}">
+	<cmpt-comm-list source='admin' type="admin-order-list" search="{{search}}" _menus="{{sortMenus}}" _items="{{sortItems}}" route="admin/order_list" sortMenusDefaultIndex="0" topBottom="50" placeholder="搜索商品，用户" bind:list="bindCommListCmpt">
+
+		<view slot="searchEnd">
+
+		</view>
+		<!-- List Begin -->
+		<view class="admin-comm-list">
+			<view wx:if="{{dataList && dataList.total }}" class="load text-grey">共有{{dataList.total}}条符合条件记录</view>
+
+			<view class="item" wx:for="{{dataList.list}}" wx:key="key">
+				<view class="no">{{index+1}}</view> 
+
+				<view class="info">
+					<view class="info-item">
+						<view class="title">商品</view>
+						<view class="mao">：</view>
+						<view class="content">《{{item.ORDER_GOODS_TITLE}}》 </view>
+					</view>
+					<view class="info-item">
+						<view class="title">状态</view>
+						<view class="mao">：</view>
+						<view class="content">
+							<text wx:if="{{item.ORDER_STATUS==0}}" class="text-black">系统已取消</text>
+							<text wx:elif="{{item.ORDER_STATUS==1}}" class="text-blue">兑换成功，待领取</text>
+							<text wx:elif="{{item.ORDER_STATUS==9}}" class="text-green"><text class="icon-roundcheckfill"></text>兑换成功，已领取</text>
+						</view>
+					</view>
+
+					<view class="info-item" bind:tap="url" data-url="{{item.user.USER_MOBILE}}" data-type="phone">
+						<view class="title">用户</view>
+						<view class="mao">：</view>
+						<view class="content">{{item.user.USER_NAME}} <text class="text-grey margin-left-s">({{item.user.USER_MOBILE}})</text></view>
+					</view>
+
+					<view class="info-item">
+						<view class="title">扣除积分</view>
+						<view class="mao">：</view>
+						<view class="content">{{item.ORDER_SCORE}}分 </view>
+					</view> 
+
+					<view class="info-item">
+						<view class="title">兑换时间</view>
+						<view class="mao">：</view>
+						<view class="content">{{item.ORDER_ADD_TIME}}</view>
+					</view>
+
+					<view class="oprt">
+						<view wx:if="{{item.ORDER_STATUS!=0}}" bindtap="bindStatusTap" data-id="{{item._id}}" data-status="0" class="btn round margin-right-s"><text class="icon-delete margin-right-xxs text-orange"></text>取消订单</view>
+					 
+						<view wx:if="{{item.ORDER_STATUS==1}}" bindtap="bindStatusTap" data-id="{{item._id}}" data-status="9" class="btn round margin-right-s"><text class="icon-check margin-right-xxs text-green"></text>设为领取完成</view>
+
+						<view wx:if="{{item.ORDER_STATUS==9}}" bindtap="bindStatusTap" data-id="{{item._id}}" data-status="1" class="btn round margin-right-s"><text class="icon-close margin-right-xxs text-blue"></text>设为未领取</view>
+
+					</view>
+				</view>
+			</view>
+
+		</view>
+		<!-- List END -->
+
+		<!--load begin-->
+		<import src="../../../../../../tpls/public/list_load_tpl.wxml" />
+		<template is="listLoadTpl" data="{{dataList,skin:'text-grey'}}" />
+		<!--load end-->
+
+
+	</cmpt-comm-list>
+
+</block>

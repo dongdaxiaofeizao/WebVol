@@ -1,0 +1,27 @@
+<view wx:if="{{!isLoad}}" class="margin-top load loading text-l text-grey"></view>
+
+
+<view class="main-admin" wx:if="{{isAdmin&&isLoad}}">
+	<view class="form-box shadow">
+		<view class="form-group">
+			<view class="title text-cut">{{title}}</view>
+		</view>
+
+	</view>
+
+	<view class="form-box shadow margin-top-xs">
+
+		<view class="checkin">
+			<view class="notice"><text class="icon-scan margin-right-s text-bold"></text>用户自助签到</view>
+			<view class="desc">
+				<text class="text-black text-bold">※ 签到规则</text>
+				<text user-select="true">1. 报名用户自行扫描下方小程序码完成签到并获取积分
+					2. 用户在报名当天扫码有效，不可提前签到 
+					3. 也可以通过管理员（工作人员）进行人工扫码核销或者在后台核销</text>
+			</view>
+			<image bindtap="url" data-type="img" data-url="{{qrUrl}}" mode="aspectFill" class="loading" show-menu-by-longpress="true" src="{{qrUrl}}"></image>
+			<view class="oprt">长按图片保存小程序码</view>
+		</view>
+
+	</view>
+</view>

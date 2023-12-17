@@ -1,0 +1,7 @@
+{
+	"usingComponents": {
+		"cmpt-picker-time": "/cmpts/public/picker_time/picker_time_cmpt"
+	}, 
+	"enablePullDownRefresh": true,  
+	"navigationBarTitleText": "管理员扫码核销"
+}

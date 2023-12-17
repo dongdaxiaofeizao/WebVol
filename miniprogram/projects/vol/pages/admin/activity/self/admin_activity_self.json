@@ -1,0 +1,7 @@
+{
+	"usingComponents": {
+	 
+	}, 
+	"enablePullDownRefresh": true,  
+	"navigationBarTitleText": "用户自助签到码"
+}

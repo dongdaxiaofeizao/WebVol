@@ -1,0 +1,12 @@
+<view wx:if="{{isLoad===null}}" class="margin-top load notexist text-l load-project"></view>
+<view wx:if="{{isLoad===false}}" class="margin-top load loading text-l load-project"></view>
+
+<view wx:if="{{isLoad}}" class="main padding-project">
+	<include src="../edit/user_form.wxml" />
+	<view class="pri"><text bind:tap="bindAgreeTap" class="icon-square{{agree?'checkfill':''}} margin-right-xs"></text>
+		<text bind:tap="bindAgreeTap">请阅读并同意</text>
+		《<text bind:tap="url" data-url="../../about/index/about_index?key=SETUP_YS" class="line">用户使用协议</text>》
+		《<text bind:tap="url" data-url="../../about/index/about_index?key=SETUP_R" class="line">志愿者注册协议</text>》
+	</view>
+	<button bindtap="bindSubmitTap" class="btn-base btn-project shadow">提交注册</button>
+</view>

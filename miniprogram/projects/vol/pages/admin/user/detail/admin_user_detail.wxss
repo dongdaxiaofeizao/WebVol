@@ -1,0 +1,16 @@
+@import '../../../../../../style/public/admin.wxss';
+
+.main-admin {
+	padding: 30rpx 0rpx;
+}
+
+.info-item.pic {
+	display: flex;
+}
+
+.info-item.pic image{
+	width: 180rpx;
+	height: 180rpx;
+	margin-left: 20rpx;
+	border-radius: 2rpx;
+}

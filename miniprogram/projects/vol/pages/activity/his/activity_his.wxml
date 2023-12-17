@@ -1,0 +1,27 @@
+<view wx:if="{{!isLoad}}" class="margin-top load loading text-l load-project"></view>
+<block wx:else>
+
+	<cmpt-comm-list type="activity-list-his" _params="{{_params}}" search="{{search||''}}" _menus="{{sortMenus}}" _items="{{sortItems}}" sortMenusDefaultIndex="0" route="activity/list_his" topBottom="120" isTotalMenu="{{true}}" placeholder="搜索" bind:list="bindCommListCmpt">
+
+		<view class="city" slot="searchStart" > 
+		</view>
+
+		<view class="main">
+			<view class="list">
+				<block wx:for="{{dataList.list}}" wx:key="key">
+					 
+					<include src="../index/activity_index_list_tpl.wxml" />
+				</block>
+			</view>
+
+		</view>
+
+
+		<!--load begin-->
+		<import src="../../../../../tpls/public/list_load_tpl.wxml" />
+		<template is="listLoadTpl" data="{{skin:'load-project',dataList}}" />
+		<!--load end-->
+
+	</cmpt-comm-list>  
+
+</block>

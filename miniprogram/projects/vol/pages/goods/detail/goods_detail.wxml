@@ -1,0 +1,59 @@
+<view wx:if="{{isLoad===null}}" class="margin-top load notexist text-l load-project"></view>
+<view wx:if="{{isLoad===false}}" class="margin-top load loading text-l load-project"></view>
+
+<block wx:if="{{isLoad}}">
+	<view class="main padding-project">
+
+		<view class="article-box margin-top-xs">
+			<!-- article content begin -->
+			<view class="article card-project shadow-project">
+				<view class="title"><text user-select="true">{{goods.GOODS_TITLE}}</text></view>
+				<view class="time">{{goods.GOODS_CATE_NAME}} </view>
+
+
+				<view class="pics">
+					<image bindtap="url" data-type='img' data-url="{{goods.GOODS_OBJ.cover[0]}}" show-menu-by-longpress="{{true}}" class="loading" mode='widthFix' lazy-load="true" src="{{goods.GOODS_OBJ.cover[0]}}">
+					</image>
+				</view>
+
+				<block wx:for="{{goods.GOODS_OBJ.detail}}" wx:key="key">
+					<view class="content" wx:if="{{item.type=='text'}}">
+						<text user-select="{{true}}">{{item.val}}</text>
+					</view>
+
+					<view class="pics" wx:if="{{item.type=='img'}}">
+						<image bindtap="url" data-type='img' data-url="{{item.val}}" show-menu-by-longpress="{{true}}" class="loading" mode='widthFix' lazy-load="true" src="{{item.val}}">
+						</image>
+					</view>
+				</block>
+				<!-- article content end -->
+
+
+
+			</view>
+			<!-- article content end -->
+
+		</view>
+	</view>
+
+
+	<cmpt-detail mode="mode2" topBtnShow="{{topBtnShow}}" oid="{{goods._id}}" cate="{{goods.GOODS_CATE_NAME}}" title="{{goods.GOODS_TITLE}}" cover="{{goods.GOODS_OBJ.cover[0]}}" qr="{{goods.GOODS_QR}}" desc="查看商品详情" bg="{{skin.PROJECT_COLOR}}">
+		<view class="bottom-line">
+			<view class="score">
+				<view class="item">
+					<text class="num">{{goods.GOODS_SALE_CNT}}</text>
+					<text class="tt">已兑</text>
+				</view>
+				<view class="item">
+					<text class="num">{{goods.leave}}</text>
+					<text class="tt">库存</text>
+				</view>
+				<view class="item">
+					<text class="num">{{goods.GOODS_OBJ.score}}</text>
+					<text class="tt">积分</text>
+				</view>
+			</view>
+			<view bindtap="bindOrderTap" class="join bg-project text-white">我要兑换</view>
+		</view>
+	</cmpt-detail>
+</block>

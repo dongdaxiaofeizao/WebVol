@@ -1,0 +1,292 @@
+@import "../../../../../style/public/comm_box_list.wxss";
+@import "../../../style/skin.wxss";
+
+page {
+	background-color: #fff !important;
+}
+
+.main {
+	padding: 0rpx 0rpx 100rpx;
+}
+
+.up {
+	width: 100%;
+	padding: 0 !important;
+}
+
+.up image {
+	width: 100%;
+}
+
+.vouch {
+	width: 100%;
+}
+
+/*指示点*/
+.swiper {
+	width: 100%;
+	height: 330rpx;
+	margin-top: 10rpx;
+	margin-top: -360rpx;
+	position: relative;
+}
+
+swiper .wx-swiper-dots .wx-swiper-dot {
+	width: 15rpx;
+	height: 10rpx;
+	border-radius: 4rpx;
+}
+
+.swiper .swiper-image {
+	width: inherit;
+	height: 99%;
+	border-radius: 20rpx;
+}
+
+.swiper .quiet {
+	transform: scale(0.8333333);
+	transition: all 0.5s ease-in 0s;
+}
+
+.swiper .active {
+	transform: none;
+	transition: all 0.5s ease-in 0s;
+}
+
+swiper .wx-swiper-dot.wx-swiper-dot-active {
+	width: 40rpx;
+	height: 15rpx;
+	border-radius: 6rpx;
+}
+
+.swiper-item-images {
+	border-radius: 30rpx;
+}
+
+.menu {
+	width: 100%;
+	position: relative;
+	padding: 0 20rpx;
+}
+
+.menu .line1 {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	height: 100rpx;
+	z-index: 99;
+}
+
+.menu .inner {
+	position: relative;
+	width: 100%;
+	display: flex;
+	flex-wrap: wrap;
+	padding: 30rpx 0rpx;
+	border-radius: 50%;
+	z-index: 999;
+}
+
+.menu .inner .item {
+	width: 25%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.menu .inner .item .item-inner {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+
+}
+
+.menu .inner .item .item-inner .img {
+	width: 85rpx;
+	height: 85rpx;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+
+.menu .inner .item .item-inner .img image {
+	width: 70rpx;
+	height: 70rpx;
+}
+
+.menu .inner .item .item-inner .title {
+	font-size: 24rpx;
+	color: #666;
+	margin-top: 10rpx;
+}
+
+.down {
+	width: 100%;
+	box-sizing: border-box;
+	padding: 10rpx 0rpx;
+	z-index: 9999;
+	position: relative;
+}
+
+.tab-line {
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	padding: 10rpx 30rpx 10rpx;
+	margin-top: 40rpx;
+	align-items: center;
+}
+
+.tab-line .title {
+	font-size: 28rpx;
+	color: #333;
+	font-weight: bold;
+}
+
+.tab-line .more {
+	font-size: 24rpx;
+	color: #666;
+	background-color: #f2f2f2;
+	border-radius: 30rpx;
+	padding: 6rpx 20rpx;
+}
+
+.list {
+	width: 100%;
+	padding: 0rpx 20rpx;
+	display: flex;
+	flex-direction: column;
+}
+
+.list .item {
+	width: 100%;
+	display: flex;
+	padding: 0rpx;
+	position: relative;
+	padding: 20rpx 0;
+	position: relative;
+	border-bottom: 2rpx solid #f8f8f8;
+}
+
+.list .item:last-child {
+	border-bottom: 0rpx solid #f8f8f8;
+}
+
+.list .item .left {
+	width: 270rpx;
+	height: 180rpx;
+	border-radius: 14rpx;
+}
+
+.list .item .right {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	padding: 0 20rpx;
+	justify-content: space-between;
+	position: relative;
+}
+
+.list .item .right .title {
+	width: 100%;
+	font-size: 28rpx;
+	color: #000;
+	margin-bottom: 20rpx;
+	margin-top: 2rpx;
+}
+
+.list .item .right .downside {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+}
+
+.list .item .right .downside .desc {
+	width: 100%;
+	font-size: 24rpx;
+	color: #999;
+	margin-top: 10rpx;
+}
+
+.list .item .right .detail {
+	padding: 6rpx 40rpx;
+	display: flex;
+	justify-content: center;
+	border-radius: 999rpx;
+	background-image: linear-gradient(90deg, #00a8c1, #00d3c7);
+	color: #fff;
+	font-size: 26rpx;
+	position: absolute;
+	bottom: 0;
+	right: 6rpx;
+}
+
+.tabs .tab-menu.cur {
+	color: #000 !important;
+	font-size: 30rpx !important;
+}
+
+.tabs .tab-menu.cur:after {
+	content: " ";
+	position: absolute;
+	left: 50%;
+	bottom: 0rpx;
+	width: 50%;
+	height: 8rpx !important;
+	background-color: var(--projectColor) !important;
+	transform: translateX(-50%);
+	border-radius: 20rpx !important;
+}
+
+.mid {
+	width: 100%;
+	padding: 0 20rpx;
+	display: flex;
+	flex-direction: column;
+	margin-top: 30rpx;
+}
+
+.mid .corp {
+	width: 100%;
+	position: relative;
+	border-radius: 10rpx;
+	box-shadow: 0 10rpx 20rpx 10rpx #b1e6fd;
+	height: 150rpx;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: flex-start;
+	padding: 0 20rpx;
+	color: #fff;
+}
+
+.mid .corp>image {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: inherit;
+	height: inherit;
+	border-radius: 10rpx;
+}
+
+.mid .corp .label {
+	font-size: 32rpx;
+	z-index: 9;
+}
+
+.mid .corp .name {
+	font-size: 24rpx;
+	z-index: 9;
+	margin-top: 10rpx;
+}
+
+.mid .corp .more {
+	font-size: 28rpx;
+	z-index: 9;
+	position: absolute;
+	top: 30rpx;
+	right: 40rpx;
+}

@@ -1,0 +1,182 @@
+@import "../../../style/skin.wxss";
+
+.main {
+	padding: 0rpx !important;
+}
+
+.location {
+	font-size: 32rpx;
+	font-weight: bold;
+	color: #333;
+	padding: 10rpx 20rpx;
+}
+
+.list {
+	width: 100%;
+	padding: 10rpx 10rpx;
+	display: flex;
+	flex-direction: column;
+}
+
+.list .day {
+	width: 100%;
+	font-size: 34rpx;
+	font-weight: bold;
+	padding: 20rpx 20rpx;
+	position: relative;
+	display: flex;
+}
+
+.list .day .txt {
+	position: relative;
+}
+
+.list .day .txt .mm {
+	font-size: 70rpx;
+}
+
+.list .day .txt:after {
+	content: " ";
+	position: absolute;
+	left: 50%;
+	bottom: 0rpx;
+	width: 100%;
+	height: 8rpx;
+	background-color: var(--projectColor);
+	transform: translateX(-50%);
+}
+
+.list .year {
+	display: flex;
+	align-items: flex-start;
+	margin-left: 10rpx;
+}
+
+.list .year>text {
+	font-size: 24rpx;
+	font-weight: normal;
+	background-color: #ccc;
+	padding: 2rpx 10rpx;
+	border-radius: 6rpx;
+	color: #fff
+}
+
+.list .item {
+	width: 100%;
+	display: flex;
+	background-color: #fff;
+	padding: 20rpx 20rpx 25rpx;
+	overflow: hidden;
+	position: relative;
+	border-radius: 20rpx;
+	margin-bottom: 30rpx;
+	position: relative;
+	overflow: hidden;
+}
+
+.list .item .left {
+	width: 270rpx;
+	height: 190rpx;
+	border-radius: 8rpx;
+	margin-right: 25rpx;
+	overflow: hidden;
+	position: relative;
+}
+
+.list .item .left .cover {
+	width: inherit;
+	height: inherit;
+	border-radius: inherit;
+	margin-right: inherit;
+}
+
+.list .item .left .score {
+	position: absolute;
+	top: 0rpx;
+	left: 0rpx;
+	background-color: var(--projectColor);
+	padding: 4rpx 10rpx;
+	color: #fff;
+	z-index: 9;
+	font-size: 24rpx;
+	opacity: .95;
+	border-bottom-right-radius: 10rpx;
+	border-top-left-radius: inherit;
+}
+
+.list .item .right {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+
+.list .item .right .title {
+	width: 100%;
+	font-size: 28rpx;
+	font-weight: bold;
+	color: #333;
+	margin-bottom: 20rpx;
+	margin-top: 10rpx;
+}
+
+
+.list .item .right .detail {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	font-size: 24rpx;
+	color: #999;
+}
+
+.list .item .right .detail .line {
+	width: 100%;
+	margin-top: 5rpx;
+}
+
+
+.list .item .right .detail .line .num {
+	margin-left: 4rpx;
+	margin-right: 4rpx;
+}
+
+.list .item .status {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	font-size: 24rpx !important;
+	background-color: #f2f2f2;
+	color: #999;
+	padding: 6rpx 16rpx;
+	border-top-left-radius: 10rpx;
+	border-bottom-right-radius: inherit;
+	z-index: 9;
+}
+
+.list .item .status.comm {
+	background-image: linear-gradient(35deg, #00d3c7, #DF97C0);
+	color: #fff;
+}
+
+.tabs .tab-menu.cur {
+	color: #000 !important;
+	font-size: 30rpx !important;
+}
+
+
+.tabs .tab-menu.cur:after {
+	content: " ";
+	position: absolute;
+	left: 50%;
+	bottom: 0rpx;
+	width: 50%;
+	height: 8rpx !important;
+	transform: translateX(-50%);
+	border-radius: 20rpx !important;
+}
+
+.top_bar {
+	width: 100%;
+	background-color: #fff !important;
+}

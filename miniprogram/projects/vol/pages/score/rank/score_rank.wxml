@@ -1,0 +1,38 @@
+<cmpt-comm-list type="score_rank" _params="{{_params}}" search="{{search||''}}" _menus="{{sortMenus}}" _items="{{sortItems}}" route="score/rank" isTotalMenu="{{false}}" sortMenusDefaultIndex="0" topBottom="120" placeholder="搜索" bind:list="bindCommListCmpt">
+
+	<view slot="searchEnd">
+
+	</view>
+
+	<!-- List Begin -->
+	<view class="main-rank">
+		<view class="rank-list card-project shadow-project">
+			<view class="item">
+				<view class="item-inner" wx:for="{{dataList.list}}" wx:key="key">
+					<view class="no" wx:if="{{index<3}}">
+						<image mode="aspectFill" src="../../../images/rank/{{index+1}}.png" />
+					</view>
+					<view class="no" wx:else>{{index+1}}</view>
+					<view class="line">
+						<text class="name content-cut-one">{{item.USER_NAME}}</text>
+					</view>
+					<view class="end"><text class="text-orange">{{item.USER_SCORE_TOTAL}}</text><text class="text-xs">分</text></view>
+				</view>
+			</view>
+
+			<!--load begin-->
+			<import src="../../../../../tpls/public/list_load_tpl.wxml" />
+			<template is="listLoadTpl" data="{{skin:'load-project',dataList}}" />
+			<!--load end-->
+
+		</view>
+	</view>
+	<!-- List END -->
+
+</cmpt-comm-list>
+
+
+<block wx:if="{{skin.IS_SUB}}">
+	<import src="../../tpls/menu_tpl.wxml" />
+	<template is="menuTpl" data="{{skin,curMenu:'rank',returnHome}}" />
+</block>

@@ -1,0 +1,159 @@
+@import "../../../style/skin.wxss";
+
+page {
+	background-color: #F5F7F9;
+	width: 100%;
+	display: flex;
+}
+
+.main {
+	padding: 0;
+	width: 100%;
+	overflow: hidden;
+}
+
+.top {
+	height: 360rpx;
+	background-color: var(--projectColor);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	padding: 70rpx 30rpx 30rpx 20rpx;
+	position: relative;
+	overflow: hidden;
+	border-bottom-left-radius: 40rpx;
+}
+
+.top .bg {
+	width: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.top .inner {
+	width: 100%;
+	display: flex;
+	padding: 0 35rpx;
+	justify-items: center;
+	z-index: 99;
+}
+
+.top .inner>image {
+	height: 110rpx;
+	width: 110rpx;
+	border-radius: 50%;
+}
+
+.top .inner .right {
+	flex: 1;
+	margin-left: 20rpx;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.top .inner .right .line1 {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	margin-bottom: 15rpx;
+}
+
+.top .inner .right .line1 .name {
+	font-size: 34rpx;
+	font-weight: bold;
+	margin-right: 20rpx;
+	color: #fff;
+}
+
+.top .inner .right .line1 .type {
+	padding: 0 15rpx;
+	background-color: var(--orange);
+	color: #fff;
+	border-radius: 10rpx;
+	font-size: 24rpx;
+}
+
+.top .inner .right .line2 {
+	font-size: 26rpx;
+	color: #fff;
+} 
+ 
+.record {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	padding: 20rpx 0rpx;
+	margin-top: 30rpx;
+}
+
+.record .item {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	position: relative;
+	width: calc(100% / 3);
+	color: #333;
+}
+
+.record .item {
+	border-right: 2rpx dotted #aaa;
+}
+
+.record .item .fen {
+	font-size: 24rpx;
+	font-weight: normal;
+	color: #555;
+	margin-left: 2rpx;
+}
+
+.record .item:last-child {
+	border-right: 0;
+}
+
+.record .item .title {
+	color: #555;
+	font-weight: bold;
+	font-size: 30rpx;
+	margin-bottom: 15rpx;
+}
+
+.record .item .desc {
+	color: #aaa;
+	font-size: 24rpx;
+}
+
+
+.main .down {
+	box-sizing: border-box;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	padding: 20rpx 20rpx !important;
+	position: relative;
+}
+
+.main .comm-list .item.arrow::before,
+.main .comm-list .item .content .item-icon {
+	color: #0E9489;
+}
+
+.main .site-footer {
+	width: 100%;
+	align-self: flex-end;
+}
+
+.main .upside-shadow {
+	box-shadow: unset
+}
+
+.down .comm-list.menu.card-project {
+	border-radius: 10rpx !important;
+	border-bottom-left-radius: 40rpx !important;
+	border-top-right-radius: 40rpx !important;
+}
+ 

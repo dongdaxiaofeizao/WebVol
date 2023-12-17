@@ -1,0 +1,45 @@
+<block wx:if="{{isAdmin&&isLoad}}">
+	<cmpt-comm-list source='admin' doMonth="{{true}}" type="admin-stat-month-list" search="{{search||''}}" _menus="{{sortMenus}}" _items="{{sortItems}}" route="admin/stat_month_list" sortMenusDefaultIndex="0" topBottom="50" placeholder="搜索标题" bind:list="bindCommListCmpt"> 
+
+		<!-- begin-->
+		<view class="table margin-top-s margin-bottom sticky1" style="width:100%">
+			<view class="table-top">
+				<!-- 表格头 start -->
+				<view class="thead border">
+					<view class="td full">月份</view>
+					<view class="td" style="width:{{tdWidth}}rpx;">新注册</view>
+					<view class="td" style="width:{{tdWidth}}rpx;">新审核</view>
+					<view class="td" style="width:{{tdWidth}}rpx;">活动</view>
+					<view class="td" style="width:{{tdWidth}}rpx;">报名</view>
+					<view class="td" style="width:{{tdWidth}}rpx;">签到</view>
+				</view>
+				<!-- 表格头 end -->
+			</view>
+
+			<!-- 表格体 start -->
+			<view class="tbody">
+
+				<view class="tr stripe border {{nowMonth==item.MONTH_TITLE?'bg-orange light':''}}" wx:for="{{dataList.list}}" wx:key="key">
+					<view class="td full">{{item.MONTH_TITLE}}</view>
+					<view class="td" style="width:{{tdWidth}}rpx;">{{item.MONTH_USER_REG_CNT}}</view>
+					<view class="td" style="width:{{tdWidth}}rpx;">{{item.MONTH_USER_CHECK_CNT}}</view>
+					<view class="td" style="width:{{tdWidth}}rpx;">{{item.MONTH_ACTIVITY_CNT}}</view>
+					<view class="td" style="width:{{tdWidth}}rpx;">{{item.MONTH_ACTIVITY_JOIN_CNT}}</view>
+					<view class="td" style="width:{{tdWidth}}rpx;">{{item.MONTH_ACTIVITY_CHECK_CNT}}</view>
+				</view>
+			</view>
+
+
+		</view>
+		<!-- END -->
+
+
+		<!--load begin-->
+		<import src="../../../../../../tpls/public/list_load_tpl.wxml" />
+		<template is="listLoadTpl" data="{{dataList,skin:'text-grey'}}" />
+		<!--load end-->
+
+
+	</cmpt-comm-list>
+
+</block>

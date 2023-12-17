@@ -1,0 +1,85 @@
+@import "../../../../../style/public/detail.wxss";
+@import "../../../style/skin.wxss";
+
+
+/*底部*/
+.bottom-line {
+	height: 140rpx;
+	width: 100%;
+	background-color: #fff;
+	border-radius: 60rpx;
+	display: flex;
+	align-content: space-between;
+	align-items: center;
+	padding: 0 10rpx 0 0rpx;
+}
+
+.bottom-line .score {
+	flex: 1;
+	padding: 20rpx 10rpx 20rpx 0;
+	display: flex;
+	justify-content: flex-end;
+}
+
+.bottom-line .score .item {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 100rpx;
+}
+
+.bottom-line .score .item .num {
+	font-size: 28rpx;
+	color: var(--projectColor)
+}
+
+.bottom-line .score .item .tt {
+	font-size: 22rpx;
+	color: #999
+}
+
+.bottom-line .join {
+	padding: 20rpx 30rpx;
+	background-color: var(--projectColor);
+	width: 220rpx;
+	border-radius: 50rpx;
+	color: #fff;
+	text-align: center;
+	font-size: 28rpx;
+	border: 2rpx solid var(--projectColor)
+}
+
+.bottom-line .join.bg-grey {
+	border: 2rpx solid var(--greyLight)
+}
+
+.bottom-line .join.comment {
+	background-color: var(--greenLight);
+	color: var(--green);
+}
+
+.bottom-line .join.bg-grey {
+	box-shadow: unset;
+}
+
+.cmpt-biz-detail-mode2 .inner .slot-inner {
+	flex: 1;
+	display: flex;
+	justify-content: flex-end;
+}
+
+.cmpt-biz-detail-mode2 .inner {
+	padding: 0 !important;
+}
+
+.cmpt-biz-detail-mode2 .share,
+.cmpt-biz-detail-mode2 .fav {
+	padding: 0 10rpx !important;
+	font-size: 32rpx !important;
+}
+
+
+.cmpt-biz-detail-mode2 .inner .slot-inner { 
+    padding: 0 20rpx 0 0!important;
+}

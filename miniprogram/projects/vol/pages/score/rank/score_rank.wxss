@@ -1,0 +1,112 @@
+@import "../../../style/skin.wxss";
+@import "../../../../../cmpts/public/calendar/calendar_comm/din.wxss";
+
+.main-rank {
+	padding: 30rpx 20rpx;
+}
+
+.rank-list {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	background-color: #fff;
+	overflow: hidden;
+}
+
+
+.rank-list .item {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	border-radius: 10rpx;
+}
+
+.rank-list .item .item-inner {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	padding: 25rpx 30rpx;
+}
+
+.rank-list .item .item-inner:first-child {
+	padding-top: 50rpx;
+}
+
+.rank-list .item .item-inner:nth-child(odd) {
+	background-color: #f8f8f8;
+}
+
+.rank-list .item .item-inner:nth-child(even) {
+	background-color: #fff !important;
+}
+
+.rank-list .item .item-inner .no {
+	width: 50rpx; 
+	margin-right: 10rpx;
+	font-size: 32rpx;
+	font-family: 'din';
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.rank-list .item .item-inner .no image {
+	width: 60rpx;
+	height: 60rpx;
+}
+
+.rank-list .item .item-inner:nth-child(1) .no {
+	color: var(--red);
+}
+
+.rank-list .item .item-inner:nth-child(2) .no {
+	color: var(--orange);
+}
+
+.rank-list .item .item-inner:nth-child(3) .no {
+	color: var(--yellow);
+}
+
+.rank-list .item .item-inner:nth-child(-n+3) .no {
+	font-weight: bold;
+	font-size: 40rpx;
+	font-style: italic;
+}
+
+.rank-list .item .item-inner .img {
+	border-radius: 50%;
+	padding: 5rpx;
+	background-color: #fff;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.rank-list .item .item-inner .img image {
+	width: 80rpx;
+	height: 80rpx;
+	border-radius: 50%;
+}
+
+.rank-list .item .item-inner .line {
+	flex: 1;
+	padding: 0 20rpx;
+}
+
+.rank-list .item .item-inner .line .name {
+	font-size: 32rpx;
+	font-weight: bold;
+}
+
+.rank-list .item .item-inner .line .num {
+	font-size: 28rpx;
+	margin-top: 10rpx;
+}
+
+.rank-list .item .item-inner .end {
+	width: 120rpx;
+	font-size: 32rpx;
+	text-align: right;
+	font-family: 'din';
+}

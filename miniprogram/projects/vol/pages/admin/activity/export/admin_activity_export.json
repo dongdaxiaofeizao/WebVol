@@ -1,0 +1,6 @@
+{
+	"usingComponents": { 
+	}, 
+	"enablePullDownRefresh": true,  
+	"navigationBarTitleText": "报名名单导出"
+}

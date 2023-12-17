@@ -1,0 +1,31 @@
+<view wx:if="{{!_params}}" class="margin-top load loading text-l load-project"></view>
+<block wx:else>
+	<cmpt-comm-list type="goods-list" sortMenusDefaultIndex="0" _params="{{_params}}" search="{{search}}" _menus="{{sortMenus}}" _items="{{sortItems}}" route="goods/list" topBottom="120" placeholder="搜索" bind:list="bindCommListCmpt">
+
+		<view class="list">
+			<view class="item" wx:for="{{dataList.list}}" wx:key="key" bindtap="url" data-url="../detail/goods_detail?id={{item._id}}">
+				<view class="item-inner shadow">
+					<image mode="aspectFill" class="loading" lazy-load="{{true}}" src="{{item.GOODS_OBJ.cover[0]}}">
+						<view class="attention">
+							<view class="left">{{item.GOODS_OBJ.score}}<text class="text-s">分</text></view>
+							<view class="right">已兑{{item.GOODS_SALE_CNT}}</view>
+						</view>
+					</image>
+					<view class="detail">
+						<view class="title content-cut-one"> {{item.GOODS_TITLE}}</view>
+					</view>
+				</view>
+
+			</view>
+
+		</view>
+
+		<!--load begin-->
+		<import src="../../../../../tpls/public/list_load_tpl.wxml" />
+		<template is="listLoadTpl" data="{{skin:'load-project',dataList}}" />
+		<!--load end-->
+
+	</cmpt-comm-list> 
+ 
+
+</block>

@@ -1,0 +1,126 @@
+page {
+	background-color: #f1f1f1;
+
+	--projectColor: #00B1C2;
+	--projectColorLight: #00d3c7;
+	--projectCompareColor: #DF97C0;
+
+	/*#### 父组件日历颜色定义*/
+	/* 整体颜色 */
+	--calendarPageColor: #fff;
+	/* 加重颜色*/
+	--calendarMainColor: #00B1C2 !important;
+	/* 加重的亮颜色 用于选中日期的数据小圆点 */
+	--calendarLightColor: #00d3c7;
+}
+
+.text-compare {
+	color: var(--projectCompareColor)
+}
+
+.bg-admin {
+	background-color: #2499f2;
+}
+
+.text-project {
+	color: var(--projectColor) !important;
+}
+
+.bg-project {
+	background-color: var(--projectColor) !important;
+}
+
+.bg-project.light {
+	color: var(--projectColor) !important;
+	background-color: var(--projectColorLight) !important;
+}
+
+.border-project {
+	border-color: var(--projectColor) !important;
+}
+
+.menu-project {
+	color: #000 !important;
+}
+
+.tabs .tab {
+	font-size: 28rpx !important;
+}
+
+.tabs .cur {
+	color: #000 !important;
+	font-size: 30rpx !important;
+}
+
+.tabs .tab-menu.cur:after {
+	background-color: var(--projectCompareColor) !important;
+}
+
+
+.load-project {
+	color: #8799a3 !important;
+}
+
+.padding-project {
+	padding-left: 25rpx !important;
+	padding-right: 25rpx !important;
+}
+
+.btn-project {
+	line-height: 80rpx;
+	height: 80rpx;
+	color: #fff;
+	background-image: linear-gradient(90deg,#00a8c1,#00d3c7);
+	border-radius: 20rpx !important;
+}
+
+.phone-button {
+	color: #444 !important;
+}
+
+.shadow-project {
+	box-shadow: 6rpx 6rpx 20rpx rgba(216, 220, 223, 0.8);
+}
+
+.card-project,
+.main .list .item.card-project,
+.down .comm-list.menu.card-project,
+.article-box .article.card-project,
+.text-pic-list-box .item.card-project,
+.info-list-box .item.card-project,
+.main-content .content.card-project,
+.meet-list-box .item.card-project,
+.form-box.card-project,
+.bar .search-form {
+	border-radius: 20rpx !important;
+}
+
+.up-project {
+	width: 100%;
+	padding: 0;
+	margin: 0;
+}
+
+.up-project image {
+	padding: 0;
+	width: 100%;
+	margin: 0;
+}
+
+.my-icon-project {
+	color: #333 !important;
+	font-size: 34rpx;
+}
+
+
+.meet-list-box {
+	padding: 20rpx 30rpx 30rpx 30rpx;
+}
+
+.title-project {
+	color: var(--projectTextColor) !important;
+}
+
+.bar .search-form {
+	background-color: #f6f7fb;
+}
